@@ -20,6 +20,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PaymentDetailsComponent } from './payment-details/payment-details.component';
 import { HttpClientModule } from '@angular/common/http';
 import { WelcomePageComponent } from './components/welcome-page/welcome-page.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
 
 
 
@@ -39,6 +41,8 @@ import { WelcomePageComponent } from './components/welcome-page/welcome-page.com
     HomeComponent,
     PaymentDetailsComponent,
     WelcomePageComponent,
+    FooterComponent,
+    AboutUsComponent,
    
 
 

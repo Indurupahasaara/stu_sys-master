@@ -6,6 +6,7 @@ import { SignComponent } from './components/sign/sign.component';
 import { StuRegComponent } from './components/stu-reg/stu-reg.component';
 import { WelcomePageComponent } from './components/welcome-page/welcome-page.component';
 import { PaymentDetailsComponent } from './payment-details/payment-details.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
 
 const routes: Routes = [
   {
@@ -41,7 +42,11 @@ const routes: Routes = [
   {
     path:'welcome',
     component:WelcomePageComponent
-  }
+  },
+  // {
+  //   path:'about-Us',
+  //   Component:AboutUsComponent
+  // }
  
 ];
 
