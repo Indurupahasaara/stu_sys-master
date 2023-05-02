@@ -1,0 +1,49 @@
+/* .card {
+    
+    min-height: 200px;
+} */
+
+.container{
+    margin-top: 8%;
+    /* margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto; */
+}
+
+.inner{
+    overflow: hidden;
+}
+
+.inner img{
+    transition: all 1.5s ease;
+}
+.inner:hover{
+    transform: scale(1.1);
+}
+.wrapper{
+    
+    background-size: cover;
+     height:100vh;
+     background-color: cadetblue;
+     user-select: none;
+     background-image: url("https://i.pinimg.com/originals/67/18/22/671822c2f63dd5f65d8fd15c9710420b.jpg");
+    
+}
+.d-block{
+    height: 600px;
+    width: 1300px;
+}
+.heading{
+    font-size: larger;
+    font-style: italic;
+}
+.card-img-top{
+    height: 350px;
+    width: 370px;
+}
+.d-block2{
+    height: 600px;
+    width: 1300px;
+    outline: 2cm;
+}
+

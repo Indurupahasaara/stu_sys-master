@@ -1,0 +1,69 @@
+html,
+body {
+  height: 100%;
+  background-color:aquamarine;
+}
+
+body {
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  -ms-flex-align: center;
+  -ms-flex-pack: center;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  padding-top: 30px;
+  padding-bottom: 40px;
+  background-color: azure;
+}
+
+.form-signin {
+  width: 90%;
+  max-width: 330px;
+  padding: 14px;
+  margin: 0 auto;
+  margin-top: 1%;
+  margin-bottom: 20px;
+}
+.form-signin .checkbox {
+  font-weight: 400;
+}
+.form-signin .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.mrg-top-150 {
+  margin-top: 150px;
+}
+
+.card{
+  margin-top: 50px;
+  background-image: -moz-repeating-linear-gradient("https://thumbs.dreamstime.com/b/image-view-typical-american-school-building-exterior-123934576.jpg");
+}
+.card-body{
+
+  background-color: aqua;
+  background-image: "https://thumbs.dreamstime.com/b/image-view-typical-american-school-building-exterior-123934576.jpg ";
+}
+.form-signin{
+  background-color: blanchedalmond;
+}
