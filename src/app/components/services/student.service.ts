@@ -35,7 +35,8 @@ export class StudentService {
 
   getAll(): Observable<any>{
     // //return this.http.get(`${this.baseAPIUrl}/customer.json`).pipe(map((res) => {
-    return this.http.get(`${this.baseAPIUrl}/student.json`).pipe(map((res) => {
+    return this.http.get(`${this.baseAPIUrl}student.json`);
+    // .pipe(map((res) => {
     //   const students:any[] = [];
     //   for(const key in res){
     //     if(res.hasOwnProperty(key)){
@@ -43,7 +44,7 @@ export class StudentService {
     //     }
     //   }
     //   return students;
-     }));
+    //  }));
   }
 
 }

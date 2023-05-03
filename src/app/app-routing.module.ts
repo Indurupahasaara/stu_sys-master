@@ -43,10 +43,10 @@ const routes: Routes = [
     path:'welcome',
     component:WelcomePageComponent
   },
-  // {
-  //   path:'about-Us',
-  //   Component:AboutUsComponent
-  // }
+  {
+    path:'about-Us',
+    component:AboutUsComponent
+  }
  
 ];
 

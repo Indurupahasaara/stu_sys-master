@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 import { Observable } from 'rxjs/internal/Observable';
 import { StudentService } from '../services/student.service';
+import { contactNoLKR, emailValidator, fullNameValidator, lankanNicValidator } from 'src/app/shared/data/customRegex (1)';
 
 @Component({
   selector: 'app-stu-reg',
@@ -38,22 +39,26 @@ export class StuRegComponent implements OnInit {
 
   }
   getList(): void {
-    this.studentService.getAll().subscribe(res => {
+    this.studentService.getAll().subscribe(res  => {
       this.studentList = res;
+      console.log("this.studentList");
+      console.log(this.studentList[0]);
     })
   }
   // validations
   initForm(): void {
     this.stu_regForm = this.fb.group({
-      fname: ['', [Validators.required]],
-      lname: ['', [Validators.required]],
-      email: ['', [Validators.required, Validators.email,Validators. maxLength]],
-      contactNo: ['', [Validators.required]],
-      id: ['', [Validators.required]],
+      fname: ['', [Validators.required,fullNameValidator]],
+      lname: ['', [Validators.required,fullNameValidator]],
+      email: ['', [Validators.required, Validators.email,Validators. maxLength,emailValidator]],
+      contactNo: ['', [Validators.required,contactNoLKR]],
+      id: ['', [Validators.required,lankanNicValidator]],
       gender: ['', [Validators.required]],
       course: ['', [Validators.required]],
-      Address:['',[Validators.required]]
-      
+      Address:['',],
+      lane:[''],
+      town:[''],
+      city:['']
     })
   }
 
@@ -61,7 +66,7 @@ export class StuRegComponent implements OnInit {
   Onsubmit(): void {
   
     this.submitted = true;
-    // console.log(this.stu_regForm.valid);
+    console.log(this.stu_regForm);
     if (this.stu_regForm.valid) {
 
       this.studentService.create(this.stu_regForm.value).subscribe(res => {
@@ -73,7 +78,7 @@ export class StuRegComponent implements OnInit {
     }else{
       this.stu_regForm.reset;
     }
-    // console.log("alert"); 
+    console.log("alert"); 
   }
   // To delete
   onDelete(id: string): void {

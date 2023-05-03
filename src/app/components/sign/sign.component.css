@@ -16,7 +16,7 @@ body {
   justify-content: center;
   padding-top: 30px;
   padding-bottom: 40px;
-  background-color: azure;
+  /* background-color: azure; */
 }
 
 .form-signin {
@@ -61,7 +61,7 @@ body {
 }
 .card-body{
 
-  background-color: aqua;
+  /* background-color: aqua; */
   background-image: "https://thumbs.dreamstime.com/b/image-view-typical-american-school-building-exterior-123934576.jpg ";
 }
 .form-signin{

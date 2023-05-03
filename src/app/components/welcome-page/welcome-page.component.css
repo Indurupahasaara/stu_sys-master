@@ -3,3 +3,8 @@
     font-size: large;
     font-style: oblique;
 }
+
+.d-block{
+    width: 600px;
+    height:500px;
+}

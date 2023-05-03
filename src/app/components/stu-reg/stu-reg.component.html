@@ -1,7 +1,7 @@
 <div class="container">
 
     <form [formGroup]="stu_regForm" (ngSubmit)="Onsubmit()">
-        <div class="row">
+        <div class="row mt-5">
             <div class="col-md-12">
                 <h1> <b> Student Registration </b></h1>
             </div>
@@ -9,7 +9,6 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-body">
-
                         <!-- name -->
                         <div class="row">
                             <div class="col-md-6">
@@ -21,7 +20,7 @@
 
                                     <div class="invalid-feedback" *ngIf="submitted && f.fname.errors">
                                         <div *ngIf="f.fname.errors.required">Please Enter First Name</div>
-                                        <div *ngIf="f.fname.errors.pattern">Firstname is invalid</div>
+                                        <div *ngIf="f.fname.errors.pattern">First name is invalid</div>
                                     </div>
                                 </div>
                             </div>
@@ -33,7 +32,7 @@
                                         [ngClass]="{'is-invalid': submitted && f.lname.errors }">
                                     <div class="invalid-feedback" *ngIf="submitted && f.fname.errors">
                                         <div *ngIf="f.fname.errors.required">Please Enter last Name</div>
-                                        
+                                        <div *ngIf="f.fname.errors.pattern">Last name is invalid</div>
                                     </div>
 
                                 </div>
@@ -71,8 +70,8 @@
 
                                     <div class="invalid-feedback" *ngIf="submitted && f.contactNo.errors">
                                         <div *ngIf="f.contactNo.errors.required">Please Enter Telephone No</div>
-                                        <div *ngIf="f.contactNo.errors.pattern">Lastname should contain minimum 2
-                                            characters & should'nt contain symbols and numbers</div>
+                                        <!-- <div *ngIf="f.contactNo.errors.pattern">Lastname should contain minimum 2
+                                            characters & should'nt contain symbols and numbers</div> -->
                                     </div>
                                 </div>
                             </div>
@@ -146,7 +145,7 @@
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label>Address</label>
-                                    <input type="text" class="form-control " formControlnName="Address" placeholder="No"
+                                    <input type="text" class="form-control " formControlName="Address" placeholder="No"
                                         >
 
                  
@@ -156,7 +155,7 @@
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label>lane</label>
-                                    <input type="text" class="form-control" formControlnName="Address"
+                                    <input type="text" class="form-control" formControlName="lane"
                                         placeholder="Lane" >
 
                                 </div>
@@ -165,7 +164,7 @@
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label>town</label>
-                                    <input type="text" class="form-control" formControlnName="Address"
+                                    <input type="text" class="form-control" formControlName="town"
                                         placeholder="town" >
 
                                   
@@ -176,7 +175,7 @@
                                 <div class="form-group">
                                     <label>City</label>
                                     <input type="text" class="form-control" placeholder="Address"
-                                    formControlnName="Address" >
+                                    formControlName="city" >
 
                                 </div>
                             </div>

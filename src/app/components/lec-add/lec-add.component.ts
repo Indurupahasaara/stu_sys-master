@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LecServiceService } from '../services/lec-service.service';
+import { contactNoLKR, emailValidator, fullNameValidator, lankanNicValidator, lecidValidator } from 'src/app/shared/data/customRegex (1)';
 
 
 @Component({
@@ -53,11 +54,11 @@ export class LecAddComponent implements OnInit {
 
   initForm(): void {
     this.lec_regForm = this.fb.group({
-      firstName: ['', [Validators.required]],
-      lecId: ['', [Validators.required]],
-      email: ['', [Validators.required, Validators.email]],
-      contactNo: ['', [Validators.required, Validators.pattern('^((\\+91-?)|0)?[0-9]{10}$')]],
-      id: ['', [Validators.required]],
+      firstName: ['', [Validators.required,fullNameValidator]],
+      lecId: ['', [Validators.required,lecidValidator]],
+      email: ['', [Validators.required, Validators.email,emailValidator]],
+      contactNo: ['', [Validators.required, Validators.pattern('^((\\+91-?)|0)?[0-9]{10}$'),contactNoLKR]],
+      id: ['', [Validators.required,lankanNicValidator]],
       gender: ['', [Validators.required]],
       address: ['', [Validators.required]],
       course: ['', [Validators.required]],
@@ -82,8 +83,6 @@ export class LecAddComponent implements OnInit {
       this.lec_regForm.reset;
       // this.lec_regForm.clearValidators;
     }
-
-
     console.log("alert"); 
   }
   // to update
