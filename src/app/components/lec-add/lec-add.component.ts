@@ -48,6 +48,8 @@ export class LecAddComponent implements OnInit {
   getList(): void {
     this.lecservice.getAll().subscribe((res: any) => {
       this.lecList = res;
+      console.log("this.lecList");
+      console.log(this.lecList);
     });
   }
 
@@ -62,7 +64,14 @@ export class LecAddComponent implements OnInit {
       gender: ['', [Validators.required]],
       address: ['', [Validators.required]],
       course: ['', [Validators.required]],
-      education: ['',[Validators.required]]
+      Deg: ['',[]],
+      HD:['',[]],
+      DIP:[''],
+      AL:[''],
+      lane:[''],
+      town:[''],
+      city:['']
+ 
     });
   }
   // To Submit

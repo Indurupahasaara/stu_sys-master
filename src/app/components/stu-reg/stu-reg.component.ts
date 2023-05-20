@@ -66,7 +66,7 @@ export class StuRegComponent implements OnInit {
   Onsubmit(): void {
   
     this.submitted = true;
-    console.log(this.stu_regForm);
+    // console.log(this.stu_regForm);
     if (this.stu_regForm.valid) {
 
       this.studentService.create(this.stu_regForm.value).subscribe(res => {
@@ -78,7 +78,7 @@ export class StuRegComponent implements OnInit {
     }else{
       this.stu_regForm.reset;
     }
-    console.log("alert"); 
+    // console.log("alert"); 
   }
   // To delete
   onDelete(id: string): void {

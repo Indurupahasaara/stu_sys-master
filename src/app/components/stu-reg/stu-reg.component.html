@@ -20,7 +20,7 @@
 
                                     <div class="invalid-feedback" *ngIf="submitted && f.fname.errors">
                                         <div *ngIf="f.fname.errors.required">Please Enter First Name</div>
-                                        <div *ngIf="f.fname.errors.pattern">First name is invalid</div>
+                                        <!-- <div *ngIf="f.fname.errors.pattern">First name is invalid</div> -->
                                     </div>
                                 </div>
                             </div>
@@ -165,7 +165,7 @@
                                 <div class="form-group">
                                     <label>town</label>
                                     <input type="text" class="form-control" formControlName="town"
-                                        placeholder="town" >
+                                        placeholder="Town" >
 
                                   
                                 </div>
@@ -174,7 +174,7 @@
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label>City</label>
-                                    <input type="text" class="form-control" placeholder="Address"
+                                    <input type="text" class="form-control" placeholder="City"
                                     formControlName="city" >
 
                                 </div>
@@ -242,7 +242,6 @@
 
 
         <div class="col-md-12">
-
             <div class="card mt-4">
                 <div class="card-body">
                     <div class="row">
