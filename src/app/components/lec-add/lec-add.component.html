@@ -211,7 +211,7 @@
                                     <div class="col-3">
                                         <div class="form-check">
                                             <input class="form-check-input" type="checkbox" value="AL" id="AL"
-                                                formControlName="education">
+                                                formControlName="AL">
                                             <label class="form-check-label" for="buss">
                                                 A/L
                                             </label>
@@ -284,12 +284,19 @@
 
         </div>
 
-        <div class="col-md-15 mt-4">
+       
 
-            <div class="card mt-3">
-                <div class="card-body">
-                    <div class="row mt-3">
-                        <table class="table table-hover mt-3">
+
+    </form>
+
+
+    <div class="col-md-15 mt-4">
+
+        <div class="card mt-3">
+            <div class="card-body">
+                <div class="row mt-3">
+                    <div class="table-responsive">
+                        <table class="table table-hover table-dark mt-3">
                             <thead>
                                 <tr>
                                     <th>First Name</th>
@@ -315,28 +322,24 @@
                                     <td>{{item.id}}</td>
                                     <td>{{item.gender}}</td>
                                     <td>{{item.course}}</td>
-                                    <td>{{item.no}},{{item.lane}},{{item.town}},{{item.city}}</td>
+                                    <td>{{item.address}},{{item.lane}},{{item.town}},{{item.city}}</td>
                                     <!-- <td>{{item.lane}}</td>
                                     <td>{{item.town}}</td> -->
                                     <!-- <td>{{item.city}}</td> -->
-                                    <td>{{item.course}},{{item.course}},{{item.course}},{{item.course}}</td>
+                                    <td>{{item.AL}},{{item.DIP}},{{item.Deg}},{{item.HD}}</td>
 
                                     <td>
-                                        <button type="button" class="btn btn-success mr-2"
+                                        <button type="button" class="btn btn-success mr-2 mt-2"
                                             (click)="onUpdate(item)">U</button>
-                                        <button type="button" class="btn btn-dabger mr-2"
+                                        <button type="button" class="btn btn-danger mr-2 mt-2"
                                             (click)="onDelete (item.id)">D</button>
                                     </td>
                                 </tr>
                             </tbody>
                         </table>
-
-                     
                     </div>
                 </div>
             </div>
         </div>
-
-
-    </form>
+    </div>
 </div>

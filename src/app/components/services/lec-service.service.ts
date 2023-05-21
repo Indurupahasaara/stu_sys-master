@@ -22,7 +22,8 @@ export class LecServiceService {
     // let headers:HttpHandler =new HttpHandler().
     // set('content-type','application/jason')
     // .set('Access-Control-Allow origin','*')
-    return this.http.get(`${this.baseAPIUrl}/lec.json`).pipe(map((res) => {
+    return this.http.get(`${this.baseAPIUrl}/lec.json`)
+    // .pipe(map((res) => {
       // const lec:any[]=[];
       // for(const key in res){
       //   if(res.hasOwnProperty(key)){
@@ -30,7 +31,7 @@ export class LecServiceService {
       //   }
       // }
       // return lec;
-    }));
+    // }));
 
   }
 

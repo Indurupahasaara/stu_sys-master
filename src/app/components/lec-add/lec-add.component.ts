@@ -47,7 +47,9 @@ export class LecAddComponent implements OnInit {
 
   getList(): void {
     this.lecservice.getAll().subscribe((res: any) => {
-      this.lecList = res;
+      this.lecList = Object.values(res).map((lecdata:any)=>{
+        return lecdata;
+      })
       console.log("this.lecList");
       console.log(this.lecList);
     });
@@ -62,15 +64,16 @@ export class LecAddComponent implements OnInit {
       contactNo: ['', [Validators.required, Validators.pattern('^((\\+91-?)|0)?[0-9]{10}$'),contactNoLKR]],
       id: ['', [Validators.required,lankanNicValidator]],
       gender: ['', [Validators.required]],
-      address: ['', [Validators.required]],
       course: ['', [Validators.required]],
+      address: ['', [Validators.required]],
+      lane:[''],
+      town:[''],
+      city:[''],
       Deg: ['',[]],
       HD:['',[]],
       DIP:[''],
       AL:[''],
-      lane:[''],
-      town:[''],
-      city:['']
+      // education:['']
  
     });
   }
@@ -85,6 +88,7 @@ export class LecAddComponent implements OnInit {
       this.lecservice.create(this.lec_regForm.value).subscribe(res => {
         console.log("Record Inserted");
         alert("Data Add succesfully");
+        location.reload();
       })
       // console.log(this.lec_regForm.value);
             this.lec_regForm.reset();
@@ -108,9 +112,9 @@ export class LecAddComponent implements OnInit {
     let isConfirm: boolean = confirm('Are You want to delete this record')
     if (isConfirm) {
       this.lecservice.delete(id).subscribe(res => {
-        console.log(res);
+        console.log(res);        
         this.getList();
-
+        
       });
     }
   }

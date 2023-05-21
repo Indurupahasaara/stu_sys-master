@@ -40,9 +40,13 @@ export class StuRegComponent implements OnInit {
   }
   getList(): void {
     this.studentService.getAll().subscribe(res  => {
-      this.studentList = res;
+      this.studentList = Object.values(res).map((data:any)=>{ 
+        return data
+      })
       console.log("this.studentList");
-      console.log(this.studentList[0]);
+      console.log(this.studentList);
+
+      
     })
   }
   // validations
@@ -72,6 +76,7 @@ export class StuRegComponent implements OnInit {
       this.studentService.create(this.stu_regForm.value).subscribe(res => {
         console.log("Record Inserted");
         alert("Data Add succesfully");
+        location.reload();
       })
       console.log(this.stu_regForm.value);
     this.stu_regForm.reset();
