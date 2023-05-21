@@ -23,7 +23,7 @@ export class SignComponent implements OnInit {
   login(){
     console.log(this.username)
     if (this.username =='induru'&& this.password =='12345') {
-      alert("login Sucessfully !");
+      // alert("login Sucessfully !");
       localStorage.setItem('userId', '1');
       localStorage.setItem('userName', this.username);
       this.router.navigate(['/welcome'])

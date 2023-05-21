@@ -7,7 +7,7 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-12">
-                                <h1> <b>Add Lecthures</b></h1>
+                                <h1> <b>Add Lectururs</b></h1>
                             </div>
                         </div>
                         <!-- name -->
@@ -120,7 +120,7 @@
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label>Teaching corses</label>
+                                    <label>Teaching Coursers</label>
                                     <select class="form-contol" formControlName="course"
                                         [ngClass]="{ 'is-invalid': submitted && f.course.errors }">
                                         <option value="" selected>Select Course</option>
@@ -310,7 +310,10 @@
                                     <!-- <th>Lane</th>
                                     <th>Town</th>
                                     <th>City</th> -->
-                                    <th>Education</th>
+                                    <th>Diploma</th>
+                                    <th>Digree</th>
+                                    <th>Higher Diploma</th>
+                                    <th>A/L</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -326,13 +329,19 @@
                                     <!-- <td>{{item.lane}}</td>
                                     <td>{{item.town}}</td> -->
                                     <!-- <td>{{item.city}}</td> -->
-                                    <td>{{item.AL}},{{item.DIP}},{{item.Deg}},{{item.HD}}</td>
-
+                                    <td *ngIf="item.DI">Yes</td>
+                                    <td *ngIf="!item.DI">No</td>
+                                    <td *ngIf="item.Deg">Yes</td>
+                                    <td *ngIf="!item.Deg">No</td>
+                                    <td *ngIf="item.HD">Yes</td>
+                                    <td *ngIf="!item.HD">No</td>
+                                    <td *ngIf="item.AL">Yes</td>
+                                    <td *ngIf="!item.AL">NO</td>
                                     <td>
                                         <button type="button" class="btn btn-success mr-2 mt-2"
                                             (click)="onUpdate(item)">U</button>
                                         <button type="button" class="btn btn-danger mr-2 mt-2"
-                                            (click)="onDelete (item.id)">D</button>
+                                            (click)="onDelete (item.lecId)">D</button>
                                     </td>
                                 </tr>
                             </tbody>

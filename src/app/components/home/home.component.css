@@ -47,3 +47,10 @@
     outline: 2cm;
 }
 
+.card{
+    height: 630px;
+}
+
+.card-body p{
+min-height: 120px;
+}

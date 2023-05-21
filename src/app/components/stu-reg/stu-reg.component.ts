@@ -76,7 +76,8 @@ export class StuRegComponent implements OnInit {
       this.studentService.create(this.stu_regForm.value).subscribe(res => {
         console.log("Record Inserted");
         alert("Data Add succesfully");
-        location.reload();
+        // location.reload();
+        this.getList();
       })
       console.log(this.stu_regForm.value);
     this.stu_regForm.reset();
@@ -85,6 +86,15 @@ export class StuRegComponent implements OnInit {
     }
     // console.log("alert"); 
   }
+
+
+//   updateRecord():void{
+// this.studentService.update(this.studentList.).subscribe(res=>{
+//   alert("Data Update Succusfully")
+// })
+  // }
+
+
   // To delete
   onDelete(id: string): void {
     let isConfirm: boolean = confirm('Are You want to delete this record')
@@ -103,8 +113,27 @@ export class StuRegComponent implements OnInit {
 
     this.stu_regForm.patchValue({
 
+      fname: student.fname,
+      lname: student.lname,
+      email: student.email,
+      contactNo: student.contactNo,
+      id: student.id,
+      gender:student.gender,
+      course:student.course,
+      Address:student.Address,
+      lane:student.lane,
+      town:student.town,
+      city:student.city,
+
+      
     })
+    // this.studentService.update(this.studentList,id).subscribe(res => {
+    //   console.log(res);
+    //   // this.getList();
+    // });
   }
+
+ 
 
   // To cleare Form
   clearForm(): void {

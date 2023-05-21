@@ -85,10 +85,28 @@ export class LecAddComponent implements OnInit {
     console.log(this.lec_regForm.valid);
     if (this.lec_regForm.valid) {
 
+      if(this.lec_regForm.value.Deg == 'null'||this.lec_regForm.value.Deg == ''){
+        this.lec_regForm.get('Deg')?.setValue(false);
+        this.lec_regForm.get('Deg')?.updateValueAndValidity()
+      }
+      if(this.lec_regForm.value.HD == 'null'||this.lec_regForm.value.HD == ''){
+        this.lec_regForm.get('HD')?.setValue(false);
+        this.lec_regForm.get('HD')?.updateValueAndValidity()
+      }
+      if(this.lec_regForm.value.DIP == 'null'||this.lec_regForm.value.DIP == ''){
+        this.lec_regForm.get('DIP')?.setValue(false);
+        this.lec_regForm.get('DIP')?.updateValueAndValidity()
+      }
+      if(this.lec_regForm.value.AL == 'null'||this.lec_regForm.value.AL == ''){
+        this.lec_regForm.get('AL')?.setValue(false);
+        this.lec_regForm.get('AL')?.updateValueAndValidity()
+      }
+      
       this.lecservice.create(this.lec_regForm.value).subscribe(res => {
         console.log("Record Inserted");
         alert("Data Add succesfully");
-        location.reload();
+        this.getList();
+
       })
       // console.log(this.lec_regForm.value);
             this.lec_regForm.reset();
@@ -102,10 +120,26 @@ export class LecAddComponent implements OnInit {
   onUpdate(lec: any): void {
     this.isUpdate = true;
     this.selectedId = lec.id;
-
+    let data:object;
     this.lec_regForm.patchValue({
-
+      firstName: lec.firstName,
+      lecId: lec.lecId,
+      email: lec.email,
+      id: lec.id,
+      gender: lec.gender,
+      course: lec.course,
+      address: lec.address,
+      lane:lec.lane,
+      town:lec.town,
+      city:lec.city,
+      Deg: lec.Deg,
+      HD:lec.HD,
+      DIP:lec.DIP,
+      AL:lec.AL,
+      contactNo:lec.contactNo
     })
+    this.getList();
+  
   }
   // to delete
   onDelete(id: string): void {
@@ -114,7 +148,7 @@ export class LecAddComponent implements OnInit {
       this.lecservice.delete(id).subscribe(res => {
         console.log(res);        
         this.getList();
-        
+
       });
     }
   }
