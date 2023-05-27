@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LecServiceService } from '../services/lec-service.service';
 import { contactNoLKR, emailValidator, fullNameValidator, lankanNicValidator, lecidValidator } from 'src/app/shared/data/customRegex (1)';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -104,7 +105,12 @@ export class LecAddComponent implements OnInit {
       
       this.lecservice.create(this.lec_regForm.value).subscribe(res => {
         console.log("Record Inserted");
-        alert("Data Add succesfully");
+        // alert("Data Add succesfully");
+        Swal.fire({
+          text:'Data Added Succesfully',
+          icon:'success'
+      
+        }); 
         this.getList();
 
       })
@@ -117,7 +123,7 @@ export class LecAddComponent implements OnInit {
     console.log("alert"); 
   }
   // to update
-  onUpdate(lec: any): void {
+  onUpdate(lec: any, el: HTMLElement): void {
     this.isUpdate = true;
     this.selectedId = lec.id;
     let data:object;
@@ -138,15 +144,40 @@ export class LecAddComponent implements OnInit {
       AL:lec.AL,
       contactNo:lec.contactNo
     })
-    this.getList();
+    el.scrollIntoView();
+    // this.getList();
   
+  }
+
+
+  updateData(){
+
+    if (this.lec_regForm.valid) {
+      this.lecservice.update(this.lec_regForm.value, this.lec_regForm.value.lecId).subscribe(res => {
+        console.log(res);
+        this.getList();
+        // alert ("Data Update Succesfully")
+        Swal.fire({
+          text:'Update Succesfully',
+          icon:'success'
+      
+        });  
+      });
+    }
+
+     
   }
   // to delete
   onDelete(id: string): void {
     let isConfirm: boolean = confirm('Are You want to delete this record')
     if (isConfirm) {
       this.lecservice.delete(id).subscribe(res => {
-        console.log(res);        
+        console.log(res); 
+        Swal.fire({
+          text:'Delete Succesfully',
+          icon:'success'
+      
+        });        
         this.getList();
 
       });

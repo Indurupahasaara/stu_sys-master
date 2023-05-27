@@ -6,10 +6,10 @@
         <form class="form-signin">
            <img
             class="mb-2"
-            src="https://www.shutterstock.com/image-photo/wooden-blocks-text-login-on-260nw-2044471727.jpg"
+            src="/assets/images/img1.jpg"
             alt=""
-            width="80px"
-            height="100px"
+            width="210px" [border]="2"
+            height="150px"
           /> 
           <h1 class="h3 mb-3 font-weight-normal"><b>Sign In </b></h1>
           <label for="inputEmail" class="sr-only">Username</label>
@@ -21,8 +21,8 @@
             required
             autofocus
             [(ngModel)]="username"
-            [ngModelOptions]="{ standalone: true }"
-          />
+            [ngModelOptions]="{ standalone: true }"/>
+            
           <label for="inputPassword" class="sr-only">Password</label>
           <input
             type="password"

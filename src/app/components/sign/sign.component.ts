@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./sign.component.css']
 })
 export class SignComponent implements OnInit {
-
+  submitted: boolean = false;
   username!: string;
   password!: string;
   constructor(

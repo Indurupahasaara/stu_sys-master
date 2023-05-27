@@ -5,6 +5,7 @@ import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 import { Observable } from 'rxjs/internal/Observable';
 import { StudentService } from '../services/student.service';
 import { contactNoLKR, emailValidator, fullNameValidator, lankanNicValidator } from 'src/app/shared/data/customRegex (1)';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-stu-reg',
@@ -75,7 +76,12 @@ export class StuRegComponent implements OnInit {
 
       this.studentService.create(this.stu_regForm.value).subscribe(res => {
         console.log("Record Inserted");
-        alert("Data Add succesfully");
+        // alert("Data Add succesfully");
+        Swal.fire({
+          text:'Data Added Succesfully',
+          icon:'success'
+      
+        }); 
         // location.reload();
         this.getList();
       })
@@ -102,17 +108,20 @@ export class StuRegComponent implements OnInit {
       this.studentService.delete(id).subscribe(res => {
         console.log(res);
         // this.getList();
-
+        Swal.fire({
+          text:'Delete Succesfully',
+          icon:'success'
+      
+        });
       });
     }
   }
 
-  onUpdate(student: any): void {
+  onUpdate(student: any ,el: HTMLElement): void {
     this.isUpdate = true;
     //  this.selectedId= student.id;
 
     this.stu_regForm.patchValue({
-
       fname: student.fname,
       lname: student.lname,
       email: student.email,
@@ -124,15 +133,27 @@ export class StuRegComponent implements OnInit {
       lane:student.lane,
       town:student.town,
       city:student.city,
-
-      
     })
-    // this.studentService.update(this.studentList,id).subscribe(res => {
-    //   console.log(res);
-    //   // this.getList();
-    // });
+    el.scrollIntoView();
   }
 
+
+  updateData(){
+
+    if (this.stu_regForm.valid) {
+     this.studentService.update(this.stu_regForm.value,this.stu_regForm.value.id).subscribe(res => {
+        console.log(res);
+        this.getList();
+        // alert("Data Update Succusfully")
+
+        Swal.fire({
+          text:'Update Succesfully',
+          icon:'success'
+      
+        });  
+      });
+    }
+  }
  
 
   // To cleare Form

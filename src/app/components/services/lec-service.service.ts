@@ -17,7 +17,6 @@ export class LecServiceService {
     return this.http.post(`${this.baseAPIUrl}/lec.json`, lec);
   }
 
-
   getAll(): Observable<any> {
     // let headers:HttpHandler =new HttpHandler().
     // set('content-type','application/jason')
@@ -32,10 +31,7 @@ export class LecServiceService {
       // }
       // return lec;
     // }));
-
   }
-
-
   delete(id: string): Observable<any> {
     return this.http.delete(`${this.baseAPIUrl}/lec/${id}.json`);
   }
